@@ -1,18 +1,13 @@
 <p>home works!</p>
+<div class="services" >
 <p>¿Qué quieres hacer?</p>
-<div>
-    <label>
-      <input type="checkbox" name="option1" [(ngModel)]="option1"> Una página web (500€)
-    </label>
-  </div>
-  <div>
-    <label>
-      <input type="checkbox" name="option2" [(ngModel)]="option2"> Una consultoría SEO (300€)
-    </label>
-  </div>
-  <div>
-    <label>
-      <input type="checkbox" name="option3" [(ngModel)]="option3"> Una campaña de Google Ads (200€)
-    </label>
-  </div>
-  <p id="total">Total:</p>
+ 
+<div *ngFor="let service of services">
+  <label>
+    <input type="checkbox" [(ngModel)]="service.selected" (change)="sumTotalPrices()">
+    {{service.name}} - {{service.price}} €
+  </label>
+</div>
+<p>Total: {{totalSum}} €</p>
+</div>
+  
