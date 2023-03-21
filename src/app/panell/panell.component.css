@@ -1,0 +1,11 @@
+.form-container {
+    border: 3px solid black;
+    border-radius: 2%;
+    width: 340px;
+    padding: 10px;
+
+  }
+.row label, .row input {
+    width: 50%;
+  }
+ 
