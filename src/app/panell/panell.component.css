@@ -5,7 +5,7 @@
     padding: 10px;
 
   }
-.row label, .row input {
+.row label,.row input {
     width: 50%;
    
   }
@@ -13,3 +13,11 @@
   background-color: coral;
  
 }
+.form-control {
+  border: none;
+  text-align: center;
+}
+
+
+
+
