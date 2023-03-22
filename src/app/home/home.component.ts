@@ -20,8 +20,10 @@
       { name: 'Una consultoría SEO', price: 300, selected: false },
       { name: 'Una campaña de Google Ads', price: 200, selected: false },
     ];
+
     myForm: FormGroup;
     totalpanel = this.panelService.totalp;
+    
     constructor(private formBuilder: FormBuilder, private panelService: PanelService) {
       this.myForm = this.formBuilder.group({
         selectedService0: new FormControl(false),
