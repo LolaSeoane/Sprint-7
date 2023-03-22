@@ -1,9 +1,9 @@
-<p>home works!</p>
+<!--<p>home works!</p>
 
 
 <div class="services">
     <p>¿Qué quieres hacer?</p>
-<form>
+<form #myForm="ngForm">
     <div *ngFor="let service of services; index as i;">
         <label>
             <input type="checkbox" [(ngModel)]="service.selected" (change)="sumTotalPrices()" name="service">
@@ -22,6 +22,30 @@
 
     </div>
 </form>
+<p>Total: {{totalSum}} €</p>-->
+<div class="services">
+    <p>¿Qué quieres hacer?</p>
+    <form [formGroup]="myForm">
+        <label>
+            <input type="checkbox" formControlName="selectedService0"
+                (change)="services[0].selected = myForm.get('selectedService0')?.value">
+            {{services[0].name}} - {{services[0].price}} €
+        </label>
+        <label>
+            <input type="checkbox" formControlName="selectedService1"
+                (change)="services[1].selected = myForm.get('selectedService1')?.value">
+            {{services[1].name}} - {{services[1].price}} €
+        </label>
+        <label>
+            <input type="checkbox" formControlName="selectedService2"
+                (change)="services[2].selected = myForm.get('selectedService2')?.value">
+            {{services[2].name}} - {{services[2].price}} €
+        </label>
+    </form>
+
+    <div *ngIf="myForm.get('selectedService0')?.value">
+        <app-panell></app-panell>
+    </div>
+
     <p>Total: {{totalSum}} €</p>
-   
-      
+</div>

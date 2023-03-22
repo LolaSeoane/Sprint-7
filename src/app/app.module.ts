@@ -12,7 +12,7 @@ import { PanellComponent } from './panell/panell.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    PanellComponent
+    PanellComponent,
   ],
   imports: [
     BrowserModule,
