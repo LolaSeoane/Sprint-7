@@ -1,28 +1,4 @@
-<!--<p>home works!</p>
 
-
-<div class="services">
-    <p>¿Qué quieres hacer?</p>
-<form #myForm="ngForm">
-    <div *ngFor="let service of services; index as i;">
-        <label>
-            <input type="checkbox" [(ngModel)]="service.selected" (change)="sumTotalPrices()" name="service">
-            {{service.name}} - {{service.price}} €
-        </label>
-
-        <div *ngIf="service.selected && service.name ==='Una página web' ">
-            <ng-container *ngTemplateOutlet="panell"></ng-container>
-        </div>
-
-        <ng-template #panell>
-            <div>
-                <app-panell></app-panell>
-            </div>
-        </ng-template>
-
-    </div>
-</form>
-<p>Total: {{totalSum}} €</p>-->
 <div class="services">
     <p>¿Qué quieres hacer?</p>
     <form [formGroup]="myForm">
