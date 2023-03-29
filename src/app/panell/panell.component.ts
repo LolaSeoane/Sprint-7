@@ -1,19 +1,20 @@
 import { PanelService } from './../services/panel.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component,} from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-panell',
   templateUrl: './panell.component.html',
   styleUrls: ['./panell.component.css']
 })
-export class PanellComponent {
+export class PanellComponent{
   form: FormGroup;
   pages: AbstractControl;
   languages: AbstractControl;
-
-  constructor(private fb: FormBuilder, private panelService: PanelService) {
+  
+  constructor(private fb: FormBuilder, private panelService: PanelService, private modalService: NgbModal) {
     this.form = this.fb.group({
       pages: [1, Validators.required],
       languages: [1, Validators.required]
@@ -45,6 +46,8 @@ export class PanellComponent {
     const languages = this.languages.value;
     this.panelService.calculate(pages, languages);
   }
+  
+  
 }
 
 

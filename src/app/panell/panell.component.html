@@ -1,4 +1,3 @@
-
 <div class="form-container">
   <form [formGroup]="form">
     <div class="row mb-3">
@@ -8,6 +7,8 @@
           <button class="btn btn-outline" type="button" (click)="sumar(pages)">+</button>
           <input type="text" class="form-control" id="inputPagNumber" formControlName="pages" min="1">
           <button class="btn btn-outline" type="button" (click)="restar(pages)">-</button>
+
+          
         </div>
       </div>
     </div>
@@ -18,10 +19,11 @@
           <button class="btn btn-outline" type="button" (click)="sumar(languages)">+</button>
           <input type="text" class="form-control" id="inputLanguagesNumber" formControlName="languages" min="1">
           <button class="btn btn-outline" type="button" (click)="restar(languages)">-</button>
+          
         </div>
       </div>
+      <app-modal></app-modal>
     </div>
   </form>
 </div>
-
 
